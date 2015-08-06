@@ -17,6 +17,7 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>Queue</module>
         <module>Stack</module>
     </modules>
     
