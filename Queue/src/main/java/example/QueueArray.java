@@ -9,6 +9,9 @@ public class QueueArray<T> implements Queue<T> {
     public QueueArray()
     {
         arr = (T[]) new Object[2];
+        total = 0;
+        first = 0;
+        next = 0;
     }
 
     public boolean isEmpty() {

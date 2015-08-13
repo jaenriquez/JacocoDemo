@@ -24,19 +24,27 @@
         </dependency>
     </dependencies>
 
+    <properties>
+        <skipCC>true</skipCC>
+    </properties>
+
     <build>
         <plugins>
             <plugin>
                 <!--
                    Configure Code Coverage measurements...
                    * Only for Unit tests
-                   * Code Coverage measured for every build
+                   * Skips Code Coverage by default
                    * Generates HTML report
                    * Output file is target/jacoco.exec
                    * Output report is target/site/jacoco
                 -->
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
+                <configuration>
+                    <!-- Set skipCC true to disable code coverage executions -->
+                    <skip>${skipCC}</skip>
+                </configuration>
                 <executions>
                     <execution>
                         <id>pre-unit-test</id>
