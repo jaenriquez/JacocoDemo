@@ -46,17 +46,13 @@ public class QueueArrayTest {
     public void EnqueueDequeueMulti() {
         String q1 = "a";
         String q2 = "b";
-        String q3 = "c";
         queue.enqueue(q1);
         queue.enqueue(q2);
-        queue.enqueue(q3);
 
         String dequeued = (String) queue.dequeue();
         Assert.assertEquals(dequeued, q1);
         dequeued = (String) queue.dequeue();
         Assert.assertEquals(dequeued, q2);
-        dequeued = (String) queue.dequeue();
-        Assert.assertEquals(dequeued, q3);
     }
 
     @Test  (expectedExceptions = NoSuchElementException.class)

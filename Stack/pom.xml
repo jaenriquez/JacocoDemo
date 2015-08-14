@@ -31,9 +31,8 @@
                    Configure Code Coverage measurements...
                    * Only for Unit tests
                    * Code Coverage measured for every build
-                   * Generates HTML report
+                   * No HTML report
                    * Output file is target/jacoco.exec
-                   * Output report is target/site/jacoco
                 -->
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -42,13 +41,6 @@
                         <id>pre-unit-test</id>
                         <goals>
                             <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>post-unit-test</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
                         </goals>
                     </execution>
                 </executions>
