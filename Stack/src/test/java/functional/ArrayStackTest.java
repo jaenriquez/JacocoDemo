@@ -139,4 +139,30 @@ public class ArrayStackTest {
         Assert.assertNull (stack.top());
         Assert.assertFalse(stack.isEmpty());
     }
+
+    @Test
+    public void MakeEmpty() {
+        stack.makeEmpty();
+        Assert.assertTrue(stack.isEmpty());
+    }
+
+    @Test
+    public void MakeEmptyFromNotEmpty() {
+        stack.push("something");
+        stack.makeEmpty();
+        Assert.assertTrue(stack.isEmpty());
+    }
+
+    @Test
+    public void Resize() throws UnderflowException {
+        int numItems = 21;
+        for (int i=0; i<numItems; i++) {
+            stack.push(new Integer(i));
+        }
+        for (int i=0; i<numItems; i++) {
+            stack.pop();
+        }
+    }
+
+
 }
